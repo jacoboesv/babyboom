@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #2c3e50;
-    --accent-color: #2c3e50;
+    --accent-color: #808991;
     --background-color: #fffff;
     --text-color: #2c3e50;
     --boy-color: #87ceeb;
@@ -164,6 +164,7 @@ body {
 .subtitle-result {
     font-size: 2rem;
     margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 .predictions-section-result {
@@ -178,8 +179,6 @@ body {
 
 .predictions-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .prediction-item {
@@ -225,6 +224,7 @@ body {
     justify-content: center;
     align-items: flex-end;
     margin-bottom: 1rem;
+    
 }
 
 .podium-item {
@@ -283,6 +283,23 @@ body {
     border-radius: 10px; /* Opcional: para bordes redondeados */
 }
 
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -297,9 +314,14 @@ body {
         background-color: #ffffff;
         width: 100%;
         height: 100%;
-        margin: 1rem;
-        padding: 1rem;
-        z-index: 1;
+        margin: 2rem;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+
+    .container-result{
+        width: 95%;
+        height: 95%;
         border-radius: 5px;
     }
     

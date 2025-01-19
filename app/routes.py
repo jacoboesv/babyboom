@@ -25,7 +25,7 @@ def predict():
 
 @app.route('/result')
 def result():
-    actual_result = "niña"  # Cambia esto según el resultado real
+    actual_result = "niño"  # Cambia esto según el resultado real
 
     correct_predictions = Prediction.query.filter_by(option=actual_result).order_by(Prediction.timestamp).all()
 
