@@ -5,5 +5,5 @@ from datetime import datetime
 @app.route('/')
 def home():
     # Aquí puedes configurar la fecha de la revelación
-    reveal_date = datetime(2025, 2, 14, 18, 0)  # Ejemplo: 14 de febrero 2025, 6PM
+    reveal_date = datetime(2025, 2, 3, 0, 0)  # Ejemplo: 3 de febrero 2025, 12AM
     return render_template('index.html', reveal_date=reveal_date)

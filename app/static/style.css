@@ -106,7 +106,7 @@ body {
 }
 
 .predict-btn:hover {
-    background-color: #555; /* Color al pasar el mouse por encima */
+    animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 @keyframes fadeIn {
