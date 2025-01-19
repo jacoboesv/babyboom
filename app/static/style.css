@@ -42,9 +42,10 @@ body {
 }
 
 .image-left {
-    max-width: 5%;
+    max-width: 4%;
     float: left;
     margin-right: 0px; /* Ajusta el margen según tu preferencia */
+    margin-bottom: 1rem;
     z-index: 1;
 }
 
