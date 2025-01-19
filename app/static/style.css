@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #2c3e50;
-    --accent-color: #3498db;
+    --accent-color: #2c3e50;
     --background-color: #fffff;
     --text-color: #2c3e50;
     --boy-color: #87ceeb;
@@ -17,23 +17,35 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el contenedor padre tenga al menos la altura de la ventana */
     font-family: 'Geologica', sans-serif;
-    background-color: var(--background-color);
+    background: linear-gradient(to left, #c8b7d6 50%, #87ceeb 50%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
     color: var(--text-color);
-    line-height: 1.6;
+    /*line-height: 1.6;*/
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
     padding: 1rem;
     z-index: 1;
+    border-radius: 5px;
 }
 
 .image-left {
     max-width: 5%;
     float: left;
     margin-right: 0px; /* Ajusta el margen según tu preferencia */
+    z-index: 1;
 }
 
 .image-center {
@@ -51,7 +63,7 @@ body {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--primary-color);
 }
 
@@ -125,9 +137,13 @@ body {
 
 /* Styles for result.html */
 .container-result {
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
     padding: 1rem;
+    z-index: 1;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -275,6 +291,17 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .container {
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+        margin: 1rem;
+        padding: 1rem;
+        z-index: 1;
+        border-radius: 5px;
+    }
+    
     .title {
         font-size: 2rem;
     }

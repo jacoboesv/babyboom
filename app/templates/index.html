@@ -7,15 +7,15 @@
 
     <header class="welcome-section">
         <h1 class="title">¡Un Nuevo Amor Está en Camino!</h1>
-        <!-- <h3 class="subtitle">Acompáñanos en este momento especial</h3> -->
-        <img src="{{ url_for('static', filename='home.jpg') }}" alt="Snoppy" class="image-center">
+        <img src="{{ url_for('static', filename='piecitos.png') }}" alt="Snoppy" class="image-center">
+        <h3 class="subtitle">Acompáñanos en este momento especial</h3>
     </header>
 
     <section class="prediction-section">
         <h2>¿Qué crees que será?</h2>
         <div class="prediction-buttons">
-            <button class="predict-btn" data-prediction="niño">¡Niño! 👶</button>
-            <button class="predict-btn" data-prediction="niña">¡Niña! 👶</button>
+            <button class="predict-btn" data-prediction="niño">¡Niño!</button>
+            <button class="predict-btn" data-prediction="niña">¡Niña!</button>
         </div>
     </section>
 
@@ -43,10 +43,8 @@
 
 </div>
 
-<!--<footer>
-    <div class="floating-widget">
-        <img src="{{ url_for('static', filename='snoopyhouse.png') }}" alt="Imagen Flotante">
-    </div>
-</footer>-->
+<div class="floating-widget">
+    <img src="{{ url_for('static', filename='snoopy.png') }}" alt="Imagen Flotante">
+</div>
 
 {% endblock %}
