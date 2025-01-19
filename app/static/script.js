@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Countdown Timer
     function updateCountdown() {
-        const revealDate = new Date('2025-01-18T22:00:00').getTime();
+        const revealDate = new Date('2025-02-03T00:00:00').getTime();
         const now = new Date().getTime();
         const distance = revealDate - now;
 

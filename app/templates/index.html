@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- <img src="{{ url_for('static', filename='snoopy.png') }}" alt="Snoppy side" class="image-left"> -->
+
 <div class="container">
-    
+
     <header class="welcome-section">
         <h1 class="title">¡Un Nuevo Amor Está en Camino!</h1>
-        <h3 class="subtitle">Acompáñanos en este momento especial</h3>
+        <!-- <h3 class="subtitle">Acompáñanos en este momento especial</h3> -->
+        <img src="{{ url_for('static', filename='home.jpg') }}" alt="Snoppy" class="image-center">
     </header>
 
     <section class="prediction-section">
@@ -37,10 +41,12 @@
         </div>
     </section>
 
+</div>
+
+<!--<footer>
     <div class="floating-widget">
         <img src="{{ url_for('static', filename='snoopyhouse.png') }}" alt="Imagen Flotante">
     </div>
-
-</div>
+</footer>-->
 
 {% endblock %}

@@ -4,7 +4,7 @@
 :root {
     --primary-color: #2c3e50;
     --accent-color: #3498db;
-    --background-color: #f9fafb;
+    --background-color: #fffff;
     --text-color: #2c3e50;
     --boy-color: #87ceeb;
     --girl-color: #c8b7d6;
@@ -26,12 +26,25 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.image-left {
+    max-width: 5%;
+    float: left;
+    margin-right: 0px; /* Ajusta el margen según tu preferencia */
+}
+
+.image-center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 
 .welcome-section {
     text-align: center;
-    padding: 1rem 0;
+    padding: 0;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s forwards;
@@ -39,20 +52,19 @@ body {
 
 .title {
     font-size: 3rem;
-    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
 .countdown-section {
     text-align: center;
-    margin: 4rem 0;
+    margin: 0;
 }
 
 #countdown {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .time-block {
@@ -75,14 +87,14 @@ body {
 
 .prediction-section {
     text-align: center;
-    margin: 4rem 0;
+    margin: 1rem 0;
 }
 
 .prediction-buttons {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .predict-btn {
@@ -111,18 +123,11 @@ body {
     animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Styles for result.html */
 .container-result {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -141,7 +146,7 @@ body {
 
 .subtitle-result {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .predictions-section-result {
@@ -197,36 +202,12 @@ body {
     margin-left: 0px;
 }
 
-/* Confetti */
-.confetti {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-.confetti::before, .confetti::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('confetti.png') repeat;
-    animation: confetti-fall 5s linear infinite;
-}
-
-.confetti::after {
-    animation-delay: 2.5s;
-}
-
 /* Podium Styles */
 .podium {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .podium-item {
@@ -270,25 +251,26 @@ body {
 
 .floating-widget {
     position: fixed;
-    bottom: 20px; /* Ajusta según tu preferencia */
+    bottom: 0; /* Ajusta según tu preferencia */
     right: 20px; /* Ajusta según tu preferencia */
-    width: 100px; /* Ajusta según tu preferencia */
-    height: 100px; /* Ajusta según tu preferencia */
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 200px; /* Ajusta según tu preferencia */
+    max-height: 200px; /* Ajusta según tu preferencia */
+    background-color: #ffffff;
     border-radius: 10px; /* Opcional: para bordes redondeados */
     text-align: center;
-    padding: 10px;
 }
+
 .floating-widget img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px; /* Opcional: para bordes redondeados */
 }
 
-@keyframes confetti-fall {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
@@ -309,5 +291,28 @@ body {
 
     .time-block span:first-child {
         font-size: 1.5rem;
+    }
+
+    .floating-widget {
+        position: fixed;
+        bottom: 0; /* Ajusta según tu preferencia */
+        right: 20px; /* Ajusta según tu preferencia */
+        max-width: 200px; /* Ajusta según tu preferencia */
+        max-height: 200px; /* Ajusta según tu preferencia */
+        background-color: #f9f9f9;
+        border-radius: 10px; /* Opcional: para bordes redondeados */
+        text-align: center;
+    }
+
+    .image-left {
+        max-width: 5%;
+        float: left;
+        margin-right: 0px; /* Ajusta el margen según tu preferencia */
+    }
+
+    .image-center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
     }
 }
