@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    
+    <header class="welcome-section">
+        <h1 class="title">¡Un Nuevo Amor Está en Camino!</h1>
+        <p class="subtitle">Acompáñanos en este momento especial</p>
+    </header>
+
+    <section class="prediction-section">
+        <h2>¿Qué crees que será?</h2>
+        <div class="prediction-buttons">
+            <button class="predict-btn" data-prediction="niño">¡Niño! 👶</button>
+            <button class="predict-btn" data-prediction="niña">¡Niña! 👶</button>
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <h2>La revelación será en:</h2>
+        <div id="countdown">
+            <div class="time-block">
+                <span id="days">00</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-block">
+                <span id="hours">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-block">
+                <span id="minutes">00</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="time-block">
+                <span id="seconds">00</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
