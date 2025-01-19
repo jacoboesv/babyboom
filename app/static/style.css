@@ -6,6 +6,8 @@
     --accent-color: #3498db;
     --background-color: #f9fafb;
     --text-color: #2c3e50;
+    --boy-color: #87ceeb;
+    --girl-color: #c8b7d6;
 }
 
 * {
@@ -98,11 +100,11 @@ body {
 }
 
 .predict-btn[data-prediction="niño"] {
-    background-color: #87ceeb; /* Color para el botón de niño */
+    background-color: var(--boy-color); /* Color para el botón de niño */
 }
 
 .predict-btn[data-prediction="niña"] {
-    background-color: #c8b7d6; /* Color para el botón de niña */
+    background-color: var(--girl-color); /* Color para el botón de niña */
 }
 
 .predict-btn:hover {
@@ -116,6 +118,179 @@ body {
     }
 }
 
+/* Styles for result.html */
+.container-result {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.welcome-section-result {
+    padding: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.title-result {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.subtitle-result {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.predictions-section-result {
+    margin-top: 2rem;
+}
+
+.ranking-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.predictions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prediction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.prediction-item.correct {
+    background-color: var(--boy-color); /* Color para las predicciones correctas */
+}
+
+.position {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.position.gold {
+    color: gold;
+}
+
+.position.silver {
+    color: silver;
+}
+
+.position.bronze {
+    color: #cd7f32;
+}
+
+.name, .option {
+    margin-left: 0px;
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti::before, .confetti::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('confetti.png') repeat;
+    animation: confetti-fall 5s linear infinite;
+}
+
+.confetti::after {
+    animation-delay: 2.5s;
+}
+
+/* Podium Styles */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.podium-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100px;
+    margin: 0 10px;
+    background-color: var(--boy-color); /* Cambia según sea necesario */
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+    color: white;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.podium-item.position-1 {
+    background-color: gold;
+    height: 200px;
+}
+
+.podium-item.position-2 {
+    background-color: silver;
+    height: 175px;
+}
+
+.podium-item.position-3 {
+    background-color: #cd7f32; /* Bronze color */
+    height: 150px;
+}
+
+.podium-item::before {
+    content: attr(data-position);
+    position: absolute;
+    top: -30px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.floating-widget {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
+    width: 100px; /* Ajusta según tu preferencia */
+    height: 100px; /* Ajusta según tu preferencia */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Opcional: para bordes redondeados */
+    text-align: center;
+    padding: 10px;
+}
+.floating-widget img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px; /* Opcional: para bordes redondeados */
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .title {
@@ -123,11 +298,16 @@ body {
     }
 
     #countdown {
-        flex-wrap: wrap;
-        gap: 1rem;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
     }
 
     .time-block {
-        min-width: 80px;
+        min-width: 50px;
+        padding: 0.5rem;
+    }
+
+    .time-block span:first-child {
+        font-size: 1.5rem;
     }
 }

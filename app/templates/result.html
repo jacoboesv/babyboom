@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-result">
+    <header class="welcome-section-result">
+        <h1 class="title-result">¡El Resultado Está Aquí!</h1>
+        <h2 class="subtitle-result" style="color: {{ '#87ceeb' if actual_result == 'niño' else '#c8b7d6' }};">Es un {{ actual_result }}!</h2>
+    </header>
+
+    <section class="predictions-section-result">
+        <h2 class="ranking-title">Ranking de Predicciones</h2>
+
+        <!-- Podio -->
+        <div class="podium">
+            {% for prediction in correct_predictions %}
+            {% if loop.index <= 3 %}
+            <div class="podium-item position-{{ loop.index }}" data-position="{{ loop.index }}">
+                <span class="name">{{ prediction.name }}</span>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+
+        <!-- Lista de predicciones -->
+        <ul class="predictions-list">
+            {% for prediction in correct_predictions %}
+            {% if loop.index > 3 %}
+            <li class="prediction-item correct" 
+                style="background-color: {{ '#87ceeb' if actual_result == 'niño' else '#c8b7d6' }};">
+                <span class="position">{{ loop.index }}</span>
+                <span class="name">{{ prediction.name }}</span>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+
+<!-- Confetti -->
+<div class="confetti"></div>
+
+{% endblock %}
